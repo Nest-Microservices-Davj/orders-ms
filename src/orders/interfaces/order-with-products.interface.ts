@@ -11,6 +11,7 @@ export interface OrdersWithProducts {
   totalAmount: number;
   totalItems: number;
   status: OrderStatus;
+  stripeChargeId: string;
   paid: boolean;
   paidAt: Date;
   createdAt: Date;
