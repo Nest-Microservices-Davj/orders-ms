@@ -7,10 +7,11 @@ steps:
         "us-east1-docker.pkg.dev/microservices-426101/image-registry/orders-ms-prod",
         "-f",
         "Dockerfile.prod",
-        "ORDERS_DATABASE_URL=${ORDERS_DATABASE_URL}",
         "--platform=linux/amd64",
         ".",
       ]
+    env:
+    - "ORDERS_DATABASE_URL=${ORDERS_DATABASE_URL}"
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
